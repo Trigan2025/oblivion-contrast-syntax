@@ -1,0 +1,17 @@
+{
+  "name": "oblivion-contrast-syntax",
+  "theme": "syntax",
+  "version": "1.0.0",
+  "description": "More contrasted color scheme of the Oblivion color sheme",
+  "keywords": [
+    "syntax",
+    "theme",
+    "oblivion",
+    "contrast"
+  ],
+  "repository": "https://github.com/atom/oblivion-contrast-syntax",
+  "license": "",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
