@@ -9,7 +9,7 @@
     "oblivion",
     "contrast"
   ],
-  "repository": "https://github.com/atom/oblivion-contrast-syntax",
+  "repository": "https://github.com/Trigan2025/oblivion-contrast-syntax",
   "license": "",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
