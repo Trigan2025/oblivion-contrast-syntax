@@ -61,6 +61,11 @@ atom-text-editor {
 .syntax--keyword {
   color: white;
 
+  &.syntax--renpy:not(.syntax--control):not(.syntax--operator) {
+    color: @plum1;
+    font-weight: bold;
+  }
+
   &.syntax--control {
     font-weight: bold;
   }
@@ -159,8 +164,8 @@ atom-text-editor {
       color: @aluminium4;
     }
 
+    &.syntax--parameters { color: white; }
     &.syntax--variable,
-    &.syntax--parameters,
     &.syntax--array,
     &.syntax--dictionary {
       color: @syntax-text-color;
@@ -180,9 +185,12 @@ atom-text-editor {
     }
   }
 
-  &.syntax--section.syntax--embedded {
-    color: @chameleon2;
-    font-weight: bold;
+  &.syntax--section {
+    &.syntax--parens { color: white; }
+    &.syntax--embedded {
+      color: @chameleon2;
+      font-weight: bold;
+    }
   }
 
 }
@@ -230,7 +238,10 @@ atom-text-editor {
   }
 
   &.syntax--name.syntax--section {
-    color: @plum3;
+    color: @plum2;
+    &.syntax--label, &.syntax--menu {
+      color: @orange1;
+    }
   }
 
   &.syntax--name.syntax--tag {
