@@ -1,1 +1,2 @@
 Copyright (c) None
+There are no claims on my side. This is based on the Oblivion style of GtkSourceView that is distributed under GNU Lesser General Public License <http://www.gnu.org/licenses/> and although the final style slightly differs, I assume that this underlying license continues to apply as if it was a [code translation](https://www.gnu.org/licenses/gpl-faq.html#TranslateCode).

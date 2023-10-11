@@ -1,15 +1,37 @@
 {
   "name": "oblivion-contrast-syntax",
   "theme": "syntax",
-  "version": "0.1.1",
-  "description": "More contrasted color scheme of the Oblivion color sheme",
+  "version": "0.1.2",
+  "description": "More contrasted color scheme of the Oblivion color scheme",
   "keywords": [
     "syntax",
     "theme",
     "oblivion",
     "contrast"
   ],
+  "configSchema": {
+    "showWrapGuide": {
+      "type": "string",
+      "description": "Choose when to show the wrap guide.",
+      "enum": [
+        {
+          "value": "always",
+          "description": "Always"
+        },
+        {
+          "value": "never",
+          "description": "Never"
+        },
+        {
+          "value": "atPrefLen",
+          "description": "If wrapping at preferred line length"
+        }
+      ],
+      "default": "atPrefLen"
+    }
+  },
   "repository": "https://github.com/Trigan2025/oblivion-contrast-syntax",
+  "main":"./lib/main",
   "license": "",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
