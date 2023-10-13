@@ -1,6 +1,7 @@
-## 0.1.3 - Very small patch
+## 0.1.4 - Toggle soft-wrap consideration
 
 Changes:
 
-- I ended up deciding to remove the .syntax--none style (really no uses and the true scope for the none keyword is generally constant.none that is just the .syntax--constant style).
-I was initially about to only remove the background since it fucked-up with the selection background, but since I was keeping it just as a joke, here we are.
+- Toggling soft-wrap at preferred length were working fine, but I forgot to take into consideration when only toggling soft-wrap, now it’s fix.
+- This fix indirectly added a new When to choose (i.e: If wrapping).
+- Also, integrating the softWrap config changes into the spec file seems to have fix the need for enabling before disabling the softWrapAtPreferredLineLength in it (still not sure and not sure why).

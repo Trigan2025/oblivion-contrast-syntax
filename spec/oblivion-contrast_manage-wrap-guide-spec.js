@@ -39,26 +39,71 @@ describe('Oblivion-Contrast', () => {
 		});
 
 		describe('if atPrefLen showing wrap-guide is choosed', () => {
-			describe('when softWrapAtPreferredLineLength is enabled', () => {
+			describe('when softWrap and softWrapAtPreferredLineLength are enabled', () => {
 				beforeEach(() => {
 					editor.config.set('oblivion-contrast-syntax.showWrapGuide', "atPrefLen");
+					editor.config.set('editor.softWrap', true);
 					editor.config.set('editor.softWrapAtPreferredLineLength', true);
 				});
 				it('check if wrap-guide is enable', () => {
 					expect(editor.config.get('oblivion-contrast-syntax.showWrapGuide')).toBe("atPrefLen");
 					expect(editor.config.get('editor.softWrapAtPreferredLineLength')).toBe(true);
+					expect(editor.config.get('editor.softWrap')).toBe(true);
 					expect(editor.config.get('wrap-guide.enabled')).toBe(true);
 				});
 			});
-			describe('when softWrapAtPreferredLineLength is disabled', () => {
+			describe('when softWrap is disabled but softWrapAtPreferredLineLength is enabled', () => {
 				beforeEach(() => {
 					editor.config.set('oblivion-contrast-syntax.showWrapGuide', "atPrefLen");
-					editor.config.set('editor.softWrapAtPreferredLineLength', true); // not even sure why this one is need, but is is
+					editor.config.set('editor.softWrap', false);
+					editor.config.set('editor.softWrapAtPreferredLineLength', true);
+				});
+				it('check if wrap-guide is enable', () => {
+					expect(editor.config.get('oblivion-contrast-syntax.showWrapGuide')).toBe("atPrefLen");
+					expect(editor.config.get('editor.softWrapAtPreferredLineLength')).toBe(true);
+					expect(editor.config.get('editor.softWrap')).toBe(false);
+					expect(editor.config.get('wrap-guide.enabled')).toBe(false);
+				});
+			});
+			describe('when softWrap is enabled but softWrapAtPreferredLineLength is disabled', () => {
+				beforeEach(() => {
+					editor.config.set('oblivion-contrast-syntax.showWrapGuide', "atPrefLen");
+					editor.config.set('editor.softWrap', true);
 					editor.config.set('editor.softWrapAtPreferredLineLength', false);
 				});
 				it('check if wrap-guide is enable', () => {
 					expect(editor.config.get('oblivion-contrast-syntax.showWrapGuide')).toBe("atPrefLen");
 					expect(editor.config.get('editor.softWrapAtPreferredLineLength')).toBe(false);
+					expect(editor.config.get('editor.softWrap')).toBe(true);
+					expect(editor.config.get('wrap-guide.enabled')).toBe(false);
+				});
+			});
+		});
+
+		describe('if ifWrapping showing wrap-guide is choosed', () => {
+			describe('when softWrapAtPreferredLineLength is disabled but softWrap is enabled', () => {
+				beforeEach(() => {
+					editor.config.set('oblivion-contrast-syntax.showWrapGuide', "ifWrapping");
+					editor.config.set('editor.softWrap', true);
+					editor.config.set('editor.softWrapAtPreferredLineLength', false);
+				});
+				it('check if wrap-guide is enable', () => {
+					expect(editor.config.get('oblivion-contrast-syntax.showWrapGuide')).toBe("ifWrapping");
+					expect(editor.config.get('editor.softWrapAtPreferredLineLength')).toBe(false);
+					expect(editor.config.get('editor.softWrap')).toBe(true);
+					expect(editor.config.get('wrap-guide.enabled')).toBe(true);
+				});
+			});
+			describe('when softWrapAtPreferredLineLength is enabled but softWrap is disabled', () => {
+				beforeEach(() => {
+					editor.config.set('oblivion-contrast-syntax.showWrapGuide', "ifWrapping");
+					editor.config.set('editor.softWrap', false);
+					editor.config.set('editor.softWrapAtPreferredLineLength', true);
+				});
+				it('check if wrap-guide is enable', () => {
+					expect(editor.config.get('oblivion-contrast-syntax.showWrapGuide')).toBe("ifWrapping");
+					expect(editor.config.get('editor.softWrapAtPreferredLineLength')).toBe(true);
+					expect(editor.config.get('editor.softWrap')).toBe(false);
 					expect(editor.config.get('wrap-guide.enabled')).toBe(false);
 				});
 			});
